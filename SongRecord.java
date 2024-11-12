@@ -1,8 +1,13 @@
-package hashingAndDocumentation;
+//package hashingAndDocumentation;
+/**
+ * SongRecord.java
+ * @author Kanemoto
+ * @since 11/12/24
+ * Object for SongProgram.java
+ */
 import java.util.List;
 import java.util.Arrays;
 import java.util.Objects;
-
 public class SongRecord {
     // Instance variables
     private double valence;
@@ -138,7 +143,11 @@ public class SongRecord {
     public double getTempo() { return tempo; }
     public void setTempo(double tempo) { this.tempo = tempo; }
 
-    // toString method
+    /**
+     * Overrides the toString method to properly fit with our data.
+     * Precondition: SongRecond exists, has proper data to display.
+     * Postcondition: Relevant information is returned in relevant format.
+     */
     @Override
     public String toString() {
         return "SongRecord{" +
@@ -164,7 +173,11 @@ public class SongRecord {
                 '}';
     }
 
-    // equals method
+    /**
+     * Overrides the equals operation to accurately represent our data.
+     * Preconditions: At least one SongRecord object exists to compare to another(can be the same SongRecord) SongRecord object.
+     * Postconditions: Compares two SongRecord objects and returns true if they are equal, and false if they are not. 
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -191,6 +204,12 @@ public class SongRecord {
                 Double.compare(that.tempo, tempo) == 0;
     }
 
+
+    /**
+     * Overrides the hashCode function to hash our data appropriately
+     * Precondition: instance variables exist
+     * Postcondition: object is hashed according to Objects.hash
+     */
     @Override
     public int hashCode() {
         return Objects.hash(valence, year, acousticness, artists, danceability, durationMs, energy, explicit, id,
